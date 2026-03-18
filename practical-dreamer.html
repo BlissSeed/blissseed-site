@@ -25,7 +25,7 @@ body{font-family:'Noto Serif JP',Georgia,serif;background:var(--ivory);color:var
 
 .shimmer-text{background:linear-gradient(90deg,#92400e,#c8822a,#e8a44a,#c8822a,#92400e);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 6s linear infinite;display:inline-block}
 
-.fade-up{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.fade-up{opacity:1;transform:none}
 .fade-up.visible{opacity:1;transform:none}
 .fade-up.d1{transition-delay:.1s}.fade-up.d2{transition-delay:.2s}.fade-up.d3{transition-delay:.3s}
 .fade-up.d4{transition-delay:.4s}.fade-up.d5{transition-delay:.5s}
@@ -68,10 +68,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,247,240,
 
 /* OUTCOMES */
 .outcomes-bg{background:var(--white)}
-.outcomes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px;margin-top:56px;background:rgba(181,101,29,.08);border:1px solid rgba(181,101,29,.1)}
-.outcome-item{background:var(--white);padding:44px 36px;position:relative;transition:background .3s}
+.outcomes-grid{display:flex;flex-direction:column;gap:2px;margin-top:56px;max-width:700px;margin-left:auto;margin-right:auto;background:rgba(181,101,29,.08);border:1px solid rgba(181,101,29,.1)}
+.outcome-item{background:var(--white);padding:32px 36px;position:relative;transition:background .3s;display:flex;align-items:flex-start;gap:24px}
 .outcome-item:hover{background:var(--ivory-2)}
-.outcome-num{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:var(--orange);opacity:.18;line-height:1;margin-bottom:8px}
+.outcome-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--orange);opacity:.18;line-height:1;min-width:60px;flex-shrink:0}
 .outcome-title{font-family:'Noto Serif JP',serif;font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:14px;line-height:1.5}
 .outcome-body{font-size:.88rem;color:var(--ink-mid);line-height:1.9}
 
@@ -193,14 +193,6 @@ footer a:hover{color:rgba(255,255,255,.85)}
 
 <!-- HERO -->
 <section class="hero">
-  <svg class="hero-seed" viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="40" cy="70" rx="30" ry="45" fill="#b5651d" opacity=".6"/>
-    <path d="M40 25 Q50 10 40 0 Q30 10 40 25" fill="#6b8f71" opacity=".8"/>
-  </svg>
-  <svg class="hero-seed2" viewBox="0 0 60 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="30" cy="55" rx="22" ry="32" fill="#b5651d" opacity=".5"/>
-    <path d="M30 23 Q38 12 30 3 Q22 12 30 23" fill="#6b8f71" opacity=".7"/>
-  </svg>
   <div>
     <div class="hero-tag">Private Coaching Program</div>
     <h1>
@@ -230,17 +222,17 @@ footer a:hover{color:rgba(255,255,255,.85)}
       <p class="section-sub">「何か違う」「変わりたい」というその感覚は、あなたの中にある種が芽吹こうとしているサインです。</p>
     </div>
     <div class="outcomes-grid">
-      <div class="outcome-item fade-up d1">
+      <div class="outcome-item">
         <div class="outcome-num">01</div>
         <h3 class="outcome-title">キャリアが「自己表現」に変わる</h3>
         <p class="outcome-body">現実の枠の中で無理をするのではなく、あなたが本来持っている情熱や価値観に気づき、自分らしく社会と関わる方法が見えてきます。</p>
       </div>
-      <div class="outcome-item fade-up d2">
+      <div class="outcome-item">
         <div class="outcome-num">02</div>
         <h3 class="outcome-title">「誰かの正解」を卒業し、自分らしい姿で社会と関われるようになる</h3>
         <p class="outcome-body">世間や周りの「こうあるべき」という正解に合わせて自分を透明化するのではなく、「私はこれがやりたい」「こんな働き方が心地いい」と、自分の本音を大切にできるようになります。面接やネットワーキングの練習を通して、無理に背伸びをしない等身大の自分のままで、「ここが私のHomeだ」と思える場所を創り出す実践的なスキルが身につきます。</p>
       </div>
-      <div class="outcome-item fade-up d3">
+      <div class="outcome-item">
         <div class="outcome-num">03</div>
         <h3 class="outcome-title">遠回りが「種」に変わる</h3>
         <p class="outcome-body">「今まで私、何してたんだろう」と感じてきた経験も、決して無駄ではありません。過去のすべてを肯定し、これからのキャリアの強い土台に変えていきます。</p>
@@ -257,7 +249,7 @@ footer a:hover{color:rgba(255,255,255,.85)}
       <div class="divider-c"></div>
       <h2 class="section-title">こんな思いを<br>抱えていませんか？</h2>
     </div>
-    <div class="whom-list fade-up d2">
+    <div class="whom-list">
       <div class="whom-item">
         <div class="whom-check"><svg viewBox="0 0 14 14"><polyline points="2,7 6,11 12,3"/></svg></div>
         <p class="whom-text">就職、結婚、出産、引っ越しなど、人生やキャリアの<strong>過渡期（トランジション）</strong>にいて、「私の人生、このままでいいのかな」とふと思うことがある</p>
@@ -290,7 +282,7 @@ footer a:hover{color:rgba(255,255,255,.85)}
       <h2 class="section-title">3〜6ヶ月の<br>プライベートコーチング</h2>
       <p class="section-sub">月2回のセッションを中心に、ワークシートやリサーチの宿題を通して、あなたのペースで着実に前へ進んでいきます。</p>
     </div>
-    <div class="journey-timeline fade-up d2">
+    <div class="journey-timeline">
 
       <div class="journey-phase" style="position:relative">
         <div class="phase-dot"></div>
@@ -337,7 +329,7 @@ footer a:hover{color:rgba(255,255,255,.85)}
       <div class="divider-c"></div>
       <h2 class="section-title">料金・期間</h2>
     </div>
-    <div class="pricing-card fade-up d2">
+    <div class="pricing-card">
       <div class="pricing-badge">β版モニター 募集中</div>
       <div class="pricing-duration">3ヶ月〜6ヶ月</div>
       <p class="pricing-note">目標や今のライフスタイルに合わせて、初回の相談で一緒に決めましょう。</p>
@@ -366,7 +358,7 @@ footer a:hover{color:rgba(255,255,255,.85)}
       <div class="divider-c"></div>
       <h2 class="section-title">よくある質問</h2>
     </div>
-    <div class="faq-list fade-up d2">
+    <div class="faq-list">
 
       <div class="faq-item">
         <button class="faq-q">
@@ -429,7 +421,7 @@ footer a:hover{color:rgba(255,255,255,.85)}
       <h2 class="section-title">お申し込みの流れ</h2>
       <p class="section-sub" style="margin:14px auto 0;text-align:center">まずは気軽なおしゃべりから。無理な勧誘は一切しませんので、<br>どうぞ安心していらしてください。</p>
     </div>
-    <div class="flow-steps fade-up d2">
+    <div class="flow-steps">
 
       <div class="flow-step">
         <div class="flow-num">01</div>
@@ -495,7 +487,7 @@ footer a:hover{color:rgba(255,255,255,.85)}
 // Scroll fade
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
-}, {threshold:.12});
+}, {threshold:.05, rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
 // FAQ accordion
